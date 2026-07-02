@@ -37,45 +37,63 @@
       return choice
     };
 
-    let humanScore = 0;
-    let computerScore = 0;
+    function playGame() {
+      let humanScore = 0;
+      let computerScore = 0;
+      let rounds = 5;
 
-    function playAround(humanChoice, computerChoice) {
-      if (
-        (
-          humanChoice == 'rock' &&
-          computerChoice == 'scissors'
-        ) ||
-        (
-          humanChoice == 'paper' &&
-          computerChoice == 'rock'
-        ) ||
-        (
-          humanChoice == 'scissors' &&
-          computerChoice == 'paper'
-        )
-      ) {
-        humanScore++;
-        return `You win! ${humanChoice} beats ${computerChoice}`;
-      } else if (
-        (
-          humanChoice == 'rock' &&
-          computerChoice == 'paper'
-        ) ||
-        (
-          humanChoice == 'paper' &&
-          computerChoice == 'scissors'
-        ) ||
-        (
-          humanChoice == 'scissors' &&
-          computerChoice == 'rock'
-        )
-      ) {
-        computerScore++;
-        return `You lose! ${computerChoice} beats ${humanChoice}`
-      } else {
-        return `Tie!`
+      function playRound(humanChoice, computerChoice) {
+        let result;
+
+        if (
+          (
+            humanChoice == 'rock' &&
+            computerChoice == 'scissors'
+          ) ||
+          (
+            humanChoice == 'paper' &&
+            computerChoice == 'rock'
+          ) ||
+          (
+            humanChoice == 'scissors' &&
+            computerChoice == 'paper'
+          )
+        ) {
+          humanScore++;
+          result = `You win!, ${humanChoice} beats ${computerChoice}`;
+        } else if (
+          (
+            humanChoice == 'rock' &&
+            computerChoice == 'paper'
+          ) ||
+          (
+            humanChoice == 'paper' &&
+            computerChoice == 'scissors'
+          ) ||
+          (
+            humanChoice == 'scissors' &&
+            computerChoice == 'rock'
+          )
+        ) {
+          computerScore++;
+          result = `You lose!, ${computerChoice} beats ${humanChoice}`;
+        } else {
+          result = 'Tie!';
+        };
+
+        return result;
       }
+
+      for (rounds; rounds > 0; rounds--) {
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+
+        console.log(playRound(humanSelection, computerSelection)); 
+      }
+
+      const winner = humanScore > computerScore ? "You!" : "The computer!"; 
+
+      console.log(`The winner is: ${winner}`);
     }
   </script>
 </body>

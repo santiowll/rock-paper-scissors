@@ -16,19 +16,25 @@
 <body>
   <script>
 
-    function getComputerChoise() {
+    function getComputerChoice() {
       const randomNumber = Math.floor(Math.random() * 3);
-      let choise;
+      let choice;
 
       if (randomNumber === 0) {
-        choise = "rock";
+        choice = "rock";
       } else if (randomNumber === 1) {
-        choise = "paper";
+        choice = "paper";
       } else {
-        choise = "scissors";
+        choice = "scissors";
       }
 
-      return choise;
+      return choice;
+    }
+
+    function getHumanChoice() {
+      const choice = prompt('Rock, Paper or Scissors?').toLowerCase()
+
+      return choice
     }
 
   </script>

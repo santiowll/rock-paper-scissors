@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROCK, PAPER, SCISSORS</title>
+</head>
+
+<style>
+  body {
+    background-color: black;
+  }
+</style>
+
+<body>
+  <script>
+
+    function getComputerChoise() {
+      const randomNumber = Math.floor(Math.random() * 3);
+      let choise;
+
+      if (randomNumber === 0) {
+        choise = "rock";
+      } else if (randomNumber === 1) {
+        choise = "paper";
+      } else {
+        choise = "scissors";
+      }
+
+      return choise;
+    }
+
+  </script>
+</body>
+
+</html>

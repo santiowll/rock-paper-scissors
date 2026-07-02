@@ -40,7 +40,43 @@
     let humanScore = 0;
     let computerScore = 0;
 
-    
+    function playAround(humanChoice, computerChoice) {
+      if (
+        (
+          humanChoice == 'rock' &&
+          computerChoice == 'scissors'
+        ) ||
+        (
+          humanChoice == 'paper' &&
+          computerChoice == 'rock'
+        ) ||
+        (
+          humanChoice == 'scissors' &&
+          computerChoice == 'paper'
+        )
+      ) {
+        humanScore++;
+        return `You win! ${humanChoice} beats ${computerChoice}`;
+      } else if (
+        (
+          humanChoice == 'rock' &&
+          computerChoice == 'paper'
+        ) ||
+        (
+          humanChoice == 'paper' &&
+          computerChoice == 'scissors'
+        ) ||
+        (
+          humanChoice == 'scissors' &&
+          computerChoice == 'rock'
+        )
+      ) {
+        computerScore++;
+        return `You lose! ${computerChoice} beats ${humanChoice}`
+      } else {
+        return `Tie!`
+      }
+    }
   </script>
 </body>
 
